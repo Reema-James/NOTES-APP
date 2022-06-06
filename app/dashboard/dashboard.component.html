@@ -6,6 +6,59 @@
     </mat-toolbar>
   </p>
 
+ 
+<body>
   <app-favourites></app-favourites>
+  <!-- <app-quicknotes></app-quicknotes> -->
 
-  
+ 
+                  <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;FAVOURITES</b></h1>
+              
+
+             <mat-card>
+              <img src="https://tse4.mm.bing.net/th/id/OIP.vuyRATxnOBN_B8r16BrGtwHaEK?pid=ImgDet&rs=1" alt="image" style="width: 30%;">
+             </mat-card>
+             <div class="favcard">
+            <mat-card>
+              <mat-card-title>Favourite Notes</mat-card-title><button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+              </button>
+             <br>
+              <mat-card-actions>
+                <button mat-button>VIEW</button>
+                
+              </mat-card-actions>
+            </mat-card>
+</div>
+
+
+<h1><b>&nbsp;&nbsp;GROUPS</b></h1>
+<div class="favcard1">
+  <mat-card>
+    <mat-card-title>List Of Groups</mat-card-title>
+   <br>
+   <mat-form-field appearance="fill">
+     
+    <mat-label>Input</mat-label>
+    <input matInput>
+    &nbsp;&nbsp;&nbsp;
+  </mat-form-field>
+   <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="one">First option</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+    <mat-card-actions>
+      <button mat-button>ADD GROUP</button><br>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+          </body>

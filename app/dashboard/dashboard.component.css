@@ -1,0 +1,26 @@
+/* img
+ {
+        width: 350px;
+        height: 750px;
+        background-size: cover;
+        border-radius: 100px;
+        -webkit-border-radius: 170px;
+        float: left;
+ } */
+
+ .favcard{
+    
+    height: 150px;
+
+ }
+ .favcard1{
+   
+   height: 500px;
+
+}
+
+ body{
+    background-image: url('https://cdn.wallpapersafari.com/38/4/ejFIbV.jpg');
+  } 
+
+ 
