@@ -1,1 +1,30 @@
-<p>groups works!</p>
+<div class="example-container">
+
+    <mat-form-field> <input matInput
+  
+      [(ngModel)]="titleModel" placeholder="Title"> </mat-form-field>
+  
+    <br>
+ 
+    <mat-form-field> <input matInput
+  
+      [(ngModel)]="descriptionModel" placeholder="Enter group description"> </mat-form-field>
+  
+    <br>
+  
+  </div>
+ 
+  <br>
+  
+  <button class="button" mat-raised-button (click)="createGroups()">
+  
+    Add Group</button>
+ 
+  <hr>
+ 
+  <p *ngFor="let i of groups">
+  
+    <mat-card-title> {{ i.title }} </mat-card-title>
+  
+    <mat-card> {{ i.description }} </mat-card>
+  </p>

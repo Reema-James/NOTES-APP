@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+export class Groups {  title!: String;  description!: String;  }
+
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.component.html',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+  titleModel: String;  
+  descriptionModel: String;  
+  todoModel: String;  
+  groups: Groups[];  
+  constructor() {    
+  this.titleModel = '';    
+  this.descriptionModel = '';    
+  this.todoModel = '';    
+  const defaultGroups: Groups = {      
+  title: 'Group 1',      
+  description: 'Default group',        
+  };    
+  this.groups = [defaultGroups];  }  ngOnInit() {  }
+  
+  
+   createGroups() {    
+  const newGroups: Groups = {      
+  title: this.titleModel,      
+  description: this.descriptionModel,    
+  };    this.groups.push(newGroups);      
+  this.titleModel = this.todoModel = this.descriptionModel = '';  
+  }}
+  

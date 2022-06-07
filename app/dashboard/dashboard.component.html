@@ -1,14 +1,12 @@
 
+  <mat-toolbar color="primary">
 
-<p>
-    <mat-toolbar>
-      <span>NOTES APP</span>
-    </mat-toolbar>
-  </p>
+    <span>NOTES APP</span>
 
+  </mat-toolbar>
  
-<body>
-  <app-favourites></app-favourites>
+
+  <!-- <app-favourites></app-favourites> -->
   <!-- <app-quicknotes></app-quicknotes> -->
 
  
@@ -24,41 +22,39 @@
                 <mat-icon>favorite</mat-icon>
               </button>
              <br>
+
+             <!-- <div class="button">
+
+              <button mat-raised-button color="primary" class="my-class" (click)="openDialog()">View</button>
+        
+            </div> -->
+
               <mat-card-actions>
-                <button mat-button>VIEW</button>
+
+                <button mat-button (click)="openDialog()">VIEW</button>
                 
               </mat-card-actions>
             </mat-card>
 </div>
-
+<br>
 
 <h1><b>&nbsp;&nbsp;GROUPS</b></h1>
+
+
+
 <div class="favcard1">
   <mat-card>
     <mat-card-title>List Of Groups</mat-card-title>
    <br>
-   <mat-form-field appearance="fill">
-     
-    <mat-label>Input</mat-label>
-    <input matInput>
-    &nbsp;&nbsp;&nbsp;
-  </mat-form-field>
-   <mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-    <mat-card-actions>
-      <button mat-button>ADD GROUP</button><br>
-    </mat-card-actions>
+  
+   <!-- <mat-card-actions>
+    <button mat-button onclick="">View </button><br>
+  
+  </mat-card-actions> -->
+<app-groups></app-groups>
+
+
+ 
   </mat-card>
 </div>
 
-
-          </body>
