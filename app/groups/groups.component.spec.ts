@@ -11,7 +11,9 @@ describe('GroupsComponent', () => {
       declarations: [ GroupsComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(GroupsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

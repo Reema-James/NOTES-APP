@@ -1,63 +1,39 @@
-<mat-toolbar color="primary">
 
-    <span>NOTES APP</span>
+<!-- favourites -->
+<div class="favs">
+                <h1><b>FAVOURITES</b></h1>
+           <mat-card>
+            <img src="https://tse4.mm.bing.net/th/id/OIP.vuyRATxnOBN_B8r16BrGtwHaEK?pid=ImgDet&rs=1" alt="image" style="width: 30%;">
+           </mat-card>
 
-  </mat-toolbar>
- 
+           <div class="favcard">
+          <mat-card>
+            <mat-card-title>Favourite Notes</mat-card-title>
+            <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button> <br>
+          
+            <mat-card-actions>
+              <button mat-button (click)="openDialog()">VIEW</button>
+            </mat-card-actions>
 
-  <!-- <app-favourites></app-favourites> -->
-  <!-- <app-quicknotes></app-quicknotes> -->
-
- 
-                  <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;FAVOURITES</b></h1>
-              
-
-             <mat-card>
-              <img src="https://tse4.mm.bing.net/th/id/OIP.vuyRATxnOBN_B8r16BrGtwHaEK?pid=ImgDet&rs=1" alt="image" style="width: 30%;">
-             </mat-card>
-             <div class="favcard">
-            <mat-card>
-              <mat-card-title>Favourite Notes</mat-card-title><button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-                <mat-icon>favorite</mat-icon>
-              </button>
-             <br>
-
-             <!-- <div class="button">
-              <button mat-raised-button color="primary" class="my-class" (click)="openDialog()">View</button>
-        
-            </div> -->
-
-              <mat-card-actions>
-
-                <button mat-button (click)="openDialog()">VIEW</button>
-                
-              </mat-card-actions>
-            </mat-card>
+          </mat-card>
+          </div><br>
 </div>
-<br>
 
-<h1><b>&nbsp;&nbsp;GROUPS</b></h1>
+<!-- groups -->
 
+<div class="grps">
 
-
+<h1><b>GROUPS</b></h1>
 <div class="favcard1">
-  <mat-card>
+<mat-card>
     <mat-card-title>List Of Groups</mat-card-title>
-   <br>
-  
-   <mat-card-actions>
-
+    <br>
+    <mat-card-actions>
     <button mat-button (click)="openDialogBox()">Add</button>
-    
-  </mat-card-actions>
+    </mat-card-actions>
+</mat-card>
+</div>
 
-   <!-- <mat-card-actions>
-    <button mat-button onclick="">View </button><br>
-  
-  </mat-card-actions> -->
-<!-- <app-groups></app-groups> -->
-
-
- 
-  </mat-card>
 </div>

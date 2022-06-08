@@ -5,9 +5,6 @@
       [(ngModel)]="titleModel" placeholder="Title"> </mat-form-field>
 
     <br>
-
- 
-
     <mat-form-field> <input matInput
 
       [(ngModel)]="contentModel" placeholder="Enter your content"> </mat-form-field>
@@ -19,9 +16,6 @@
  
 
   <br>
-
- 
-
   <button class="button" mat-raised-button (click)="createQuicknotes()">
 
     Add Note</button>
@@ -30,11 +24,21 @@
 
   <hr>
 
- 
-
+  <div fxLayout="row" *ngIf="quicknotes && quicknotes.length > 0">
+  
   <p *ngFor="let i of quicknotes">
-
-    <mat-card-title> {{ i.title }} </mat-card-title>
-
-    <mat-card> {{ i.content }} </mat-card>
+    <mat-card class="example-card">
+      <mat-card-title>{{i.title}}</mat-card-title>
+      <mat-card-content>{{i.content}}</mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions>
+      <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+        <button mat-button>Edit</button>
+        <button mat-button>Delete</button>
+      </mat-card-actions>
+    </mat-card> 
   </p>
+  </div>
+ 

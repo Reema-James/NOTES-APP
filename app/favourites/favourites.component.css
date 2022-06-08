@@ -1,64 +1,43 @@
-/* .abc{
+.fav{
+  text-align: center;
+}
+
+.example-card {
+
+width: 296px;
+
+margin-left: 20px;
+
+margin-top: 20px;
+
+height: 298px
+
+}
 
 
 
-    color: rgb(61, 42, 165);
-   
-    padding-top: 10px;
-   
-    
-   
-   }
-   
-   #header{
-   
-       width: 100%;
-   
-       height: 55px;
-   
-       background-color: rgb(222, 216, 135);
-   
-   } */
-   .fav{
-       text-align: center;
-   }
-   
-   .example-card {
-   
-     width: 296px;
-   
-     margin-left: 20px;
-   
-     margin-top: 20px;
-   
-     height: 298px
-   
-     }
-   
-    
-   
-     .example-card-2{
-   
-       width: 296px;
-   
-     margin-left: 380px;
-   
-     margin-top: -300px;
-   
-     height: 450px;
-   
-     }
-   
-   
-   
-     .example-card-3{
-   
-       width: 296px;
-   
-       margin-left: 770px;
-   
-       margin-top: -480px;
-   
-       height: 450px;
-   
-     }
+.example-card-2{
+
+  width: 296px;
+
+margin-left: 380px;
+
+margin-top: -300px;
+
+height: 450px;
+
+}
+
+
+
+.example-card-3{
+
+  width: 296px;
+
+  margin-left: 770px;
+
+  margin-top: -480px;
+
+  height: 450px;
+
+}

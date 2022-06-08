@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FavouritesComponent } from './favourites/favourites.component';
-// import {QuicknotesComponent } from './quicknotes/quicknotes.component';
+import {QuicknotesComponent } from './quicknotes/quicknotes.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatRippleModule} from '@angular/material/core';
@@ -23,6 +23,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { GroupsComponent } from './groups/groups.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';  
+
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppComponent,
     DashboardComponent,
     FavouritesComponent,
-    routingComponents,
+    QuicknotesComponent,
     GroupsComponent
   ],
   imports: [
@@ -50,7 +52,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatCheckboxModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
