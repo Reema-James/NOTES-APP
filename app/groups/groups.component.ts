@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-export class Groups {  title!: String;  description!: String;  }
+export class Groups {  title!: String;  description!: String;  }
 
 @Component({
   selector: 'app-groups',
@@ -9,26 +9,25 @@ export class Groups {  title!: String;  description!: String;  }
 })
 export class GroupsComponent implements OnInit {
 
-  titleModel: String;  
-  descriptionModel: String;  
-  todoModel: String;  
-  groups: Groups[];  
-  constructor() {    
-  this.titleModel = '';    
-  this.descriptionModel = '';    
-  this.todoModel = '';    
-  const defaultGroups: Groups = {      
-  title: 'Group 1',      
-  description: 'Default group',        
-  };    
-  this.groups = [defaultGroups];  }  ngOnInit() {  }
+  titleModel: String;  
+  descriptionModel: String;  
+  todoModel: String;  
+  groups: Groups[];  
+  constructor() {    
+  this.titleModel = '';    
+  this.descriptionModel = '';    
+  this.todoModel = '';    
+  const defaultGroups: Groups = {      
+  title: 'Group 1',      
+  description: 'Default group',        
+  };    
+  this.groups = [defaultGroups];  }  ngOnInit() {  }
   
   
-   createGroups() {    
-  const newGroups: Groups = {      
-  title: this.titleModel,      
-  description: this.descriptionModel,    
-  };    this.groups.push(newGroups);      
-  this.titleModel = this.todoModel = this.descriptionModel = '';  
+   createGroups() {    
+  const newGroups: Groups = {      
+  title: this.titleModel,      
+  description: this.descriptionModel,    
+  };    this.groups.push(newGroups);      
+  this.titleModel = this.todoModel = this.descriptionModel = '';  
   }}
-  

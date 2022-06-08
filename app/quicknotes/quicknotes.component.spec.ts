@@ -11,9 +11,7 @@ describe('QuicknotesComponent', () => {
       declarations: [ QuicknotesComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(QuicknotesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

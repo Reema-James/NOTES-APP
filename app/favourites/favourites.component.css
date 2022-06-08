@@ -1,4 +1,4 @@
-.abc{
+/* .abc{
 
 
 
@@ -18,6 +18,9 @@
    
        background-color: rgb(222, 216, 135);
    
+   } */
+   .fav{
+       text-align: center;
    }
    
    .example-card {

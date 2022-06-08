@@ -11,9 +11,7 @@ describe('FavouritesComponent', () => {
       declarations: [ FavouritesComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(FavouritesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

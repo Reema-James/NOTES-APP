@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FavouritesComponent } from '../favourites/favourites.component';
+import { GroupsComponent } from '../groups/groups.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,6 +21,16 @@ export class DashboardComponent implements OnInit {
     });
 
   }
+  openDialogBox() {
+
+    this.dialog.open(GroupsComponent, {
+
+     width:'35%'
+
+    });
+
+  }
+
   ngOnInit(): void {
   }
 
