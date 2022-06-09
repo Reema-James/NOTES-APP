@@ -1,20 +1,30 @@
-.fav{
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.example-card {
+    max-width: 300px;
+  }
+
+
+ .fav{
   text-align: center;
 }
 
 .example-card {
 
-width: 296px;
-
-margin-left: 20px;
+margin-left: 50px;
 
 margin-top: 20px;
 
-height: 298px
 
+
+}
+.example-viewport {
+  height: 450px;
+  width: 500px;
+   /* border: 1px solid indigo;  */
 }
 
 
+/*
 
 .example-card-2{
 
@@ -40,4 +50,4 @@ height: 450px;
 
   height: 450px;
 
-}
+} */

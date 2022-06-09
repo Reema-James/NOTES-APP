@@ -4,21 +4,24 @@
     <form [formGroup]="addGroupForm">
           <mat-form-field appearance="outline">
             <mat-label>Title</mat-label>
-            <input formControlName="title" matInput placeholder="note title">
-          </mat-form-field>
+            <input formControlName="title" matInput placeholder="Group title">
+          </mat-form-field>&nbsp;
 
           <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
             <input fromControlName="description" matInput placeholder="Description">
-          </mat-form-field>
+          </mat-form-field><br>
 
-          <button class="button" mat-raised-button color="primary" (click)="createGroups()">
+          <button class="button" mat-raised-button color="primary">
   
             Add Group</button>
          
           <hr>
-         
-          <p *ngFor="let i of groups">
+             
+</form> 
+
+     
+ <!-- <p *ngFor="let i of groups">
           
             <mat-card-title> {{ i.title }} </mat-card-title>
           
@@ -26,10 +29,6 @@
         
             <a mat-raised-button color="primary" routerLink="/quicknotes">VIEW</a>
           </p> -->
-</form>
-
-     
-
 <!-- <div class="example-container">
 
     <mat-form-field> <input matInput

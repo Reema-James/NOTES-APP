@@ -16,10 +16,9 @@ export class DashboardComponent implements OnInit {
 
     this.dialog.open(FavouritesComponent, {
 
-     width:'65%'
+     width:'35%'
 
     });
-
   }
   openDialogBox() {
 

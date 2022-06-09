@@ -1,14 +1,12 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
- @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
- .favcard{
-    
-    height: 150px;
-
- }
- .favcard1{
+.favcard{
    
-   height: 500px;
+   height: 150px;
 
 }
+.favcard1{
+  
+  height: 500px;
 
+}
