@@ -1,0 +1,20 @@
+<div mat-dialog-content>
+   
+  <form [formGroup]="addGroupForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input formControlName="title" matInput placeholder="Group title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input formControlName="description" matInput placeholder="Description">
+        </mat-form-field>
+
+        <!-- <button class="button" mat-raised-button color="primary">Add Group</button>
+        <hr> -->
+        <div mat-dialog-actions>
+          <button color="primary" mat-button (click)="onNoClick()">Close</button>
+          <button color="primary" mat-button [mat-dialog-close]="addGroupForm" cdkFocusInitial>Add group</button>
+        </div>
+</form> 
+   </div>
