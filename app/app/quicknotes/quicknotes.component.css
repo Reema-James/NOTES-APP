@@ -1,0 +1,26 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.example-card {
+    max-width: 300px;
+}
+
+.mat-button {
+    background-color: #673ab7;
+    color: white;
+}
+.notes{
+    max-width: 400px;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
+  .edit-button{
+    background-color: #673ab7;
+    color: white;
+  }
+
+  .notes{
+  max-width: 300px;
+    margin-left: 40px;
+    margin-top: 40px;
+}

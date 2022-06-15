@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-actions>
+    <button mat-button (click)="openDialogBox()">Create Note</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+<mat-card class="notes">
+  <div #addnotes>
+  <mat-card-title>{{title}}</mat-card-title>
+  <mat-card-content>{{description}}</mat-card-content>
+</div>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions>
+    <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button class="edit-button" mat-button>Edit</button>
+    <button mat-button>Delete</button>
+  </mat-card-actions>
+  </mat-card>
