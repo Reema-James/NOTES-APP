@@ -17,36 +17,16 @@ export interface DialogData {
 
 export class DashboardComponent {
  
-  title: '';
-  description: '';
+  title!: String;
+  description!: String;
 
-constructor(public dialog : MatDialog)
-{
-  this.title = '';
-  this.description= '';
+constructor(public dialog : MatDialog){}
 
-}
-
-  openDialog() {
-
+  openDialog() 
+  {
     this.dialog.open(FavouritesComponent, {
      width:'35%'
     });
   }
 
-
-  openDialogBox()  {
-
-    const dialogRef = this.dialog.open(GroupsComponent, {
-      width: '35%',
-      data: {title: this.title, description: this.description},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.title=result.value.title;
-      this.description = result.value.description;      
-    });
-
-
-   }}
+ }

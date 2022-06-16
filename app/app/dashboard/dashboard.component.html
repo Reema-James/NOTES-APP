@@ -38,42 +38,9 @@
     <button mat-button>Delete</button>
   </mat-card-actions>
 </mat-card>
-<mat-card class="fav-card">
-<mat-card-title>Note 3</mat-card-title>
-  <mat-card-content>This is a note about Travel and Cuisines</mat-card-content>
-  <mat-divider inset></mat-divider>
-  <mat-card-actions>
-  <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-    <button mat-button>Edit</button>
-    <button mat-button>Delete</button>
-  </mat-card-actions>
-</mat-card>
 
 </mat-card>
 </div>
 
-<!-- groups -->
 
-<div class="grps">
-<mat-card>
-  <h1><b>GROUPS</b></h1>
-
-
-<button mat-raised-button color="primary" (click)="openDialogBox()">Add Group</button>
-
-
-
- <a mat-button routerLink="/quicknotes">VIEW</a>
-
-     <!-- <p *ngFor="let i of title"> -->
-    <mat-card>
-    <mat-card-title> {{title}} </mat-card-title>
-    <mat-card-content> {{description}} </mat-card-content>
-    </mat-card>
-  <!-- </p> -->
- <!-- <button mat-raised-button color="primary">Edit</button>
-    <button mat-raised-button color="primary">Delete</button> -->
-</mat-card>
-</div>
+<app-groups-list></app-groups-list>
