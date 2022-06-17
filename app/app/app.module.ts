@@ -25,6 +25,10 @@ import { GroupsComponent } from './groups/groups.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';  
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { AddnotesComponent } from './addnotes/addnotes.component';
+import { GroupsListComponent } from './groups-list/groups-list.component';
+import { HttpClientModule } from '@angular/common/http';
+
 //import { AddnotesComponent } from './addnotes/addnotes.component';
 
 
@@ -37,7 +41,9 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     DashboardComponent,
     FavouritesComponent,
     QuicknotesComponent,
-    GroupsComponent
+    GroupsComponent,
+    AddnotesComponent,
+    GroupsListComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     FormsModule,
     MatDialogModule,
     ReactiveFormsModule,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
