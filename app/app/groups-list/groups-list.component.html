@@ -4,14 +4,19 @@
     
     
     <button mat-raised-button color="primary" (click)="openDialogBox()">Add Group</button>
-    <!--  -->
-     <a mat-button routerLink="/quicknotes">VIEW</a>
+     
     
 
     <p *ngFor="let group of groupList">
         <mat-card *ngIf="groupList.length">
             <mat-card-title>{{group.title}}</mat-card-title>
             <mat-card-content>{{group.description}}</mat-card-content>
+
+           <mat-card-actions>
+              <a mat-raised-button color="primary" routerLink="/quicknotes">View</a>
+              <button mat-raised-button color="primary" (click)='editGrp(group)'>Edit</button>
+              <button mat-raised-button color="primary" (click)='deleteGrp(group)'>Delete</button> 
+            </mat-card-actions>
         </mat-card>
     </p>
     </mat-card>

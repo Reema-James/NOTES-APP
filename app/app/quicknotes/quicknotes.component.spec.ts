@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { QuicknotesComponent } from './quicknotes.component';
 
 describe('QuicknotesComponent', () => {
@@ -10,9 +11,7 @@ describe('QuicknotesComponent', () => {
       declarations: [ QuicknotesComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(QuicknotesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

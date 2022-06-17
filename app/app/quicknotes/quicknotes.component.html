@@ -1,49 +1,21 @@
 <div>
   <mat-card >
     <mat-card-actions>
-      <button mat-button (click)="openDialogBox()">Create Note</button>
+      <button mat-raised-button color="primary" (click)="openDialogBox()">Create Note</button>
     </mat-card-actions>
-  </mat-card>
-  <div>
-    <mat-card >
-      <p *ngFor="let group of noteList">
+
+      <p *ngFor="let note of noteList">
         <mat-card class="card" *ngIf="noteList.length">
-          <mat-card-title>{{group.title}}</mat-card-title>
-          <mat-card-content>{{group.description}}</mat-card-content>
+          <mat-card-title>{{note.title}}</mat-card-title>
+          <mat-card-content>{{note.description}}</mat-card-content>
+          <mat-card-actions>
+            <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+              <button mat-raised-button color="primary" (click)='editNote(note)'>Edit</button>
+              <button mat-raised-button color="primary" (click)='deleteNote(note)' >Delete</button>
+            </mat-card-actions>
         </mat-card>
       </p>
     </mat-card>
   </div>
-</div>
-
-
-<!-- <mat-card class="notes">
-  <div #addnotes>
-  <mat-card-title>{{title}}</mat-card-title>
-  <mat-card-content>{{description}}</mat-card-content>
-</div>
-  <mat-divider inset></mat-divider>
-  <mat-card-actions>
-    <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
-     <mat-icon>favorite</mat-icon>
-    </button> 
-     <button class="edit-button" mat-button>Edit</button>
-    <button mat-button>Delete</button>
-  </mat-card-actions>
-  </mat-card>  -->
-
-
-<!-- <p *ngFor="let i of addnotes">
-    <mat-card class="example-card">
-      <mat-card-title>{{i.title}}</mat-card-title>
-      <mat-card-content>{{i.content}}</mat-card-content>
-      <mat-divider inset></mat-divider>
-      <mat-card-actions>
-        <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-button>Edit</button>
-        <button mat-button>Delete</button>
-      </mat-card-actions>
-    </mat-card>
-  </p> -->

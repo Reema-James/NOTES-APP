@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { AddnotesComponent } from '../addnotes/addnotes.component';
-import { Note } from './note';
+import { ApiService } from '../api.service';
+import { Note } from './notes';
 
 
 @Component({
@@ -9,85 +11,74 @@ import { Note } from './note';
   templateUrl: './quicknotes.component.html',
   styleUrls: ['./quicknotes.component.css']
 })
-export class QuicknotesComponent implements OnInit {
+export class QuicknotesComponent implements OnInit, OnDestroy {
 
-  title!: String;
-  description!: String;
+    sub!: Subscription;
+    noteList: Note[] = [];
 
-  noteList: Note[] = [];
-
-  constructor(public dialog : MatDialog) { }
+  constructor(public dialog : MatDialog, private api: ApiService) { }
 
   ngOnInit(): void {
+    this.sub= this.api.getNotes().subscribe({
+      next: notes=> {
+        this.noteList= notes;
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+}
+
+editNote(note: Note): void{
+  
+    const dialogRef = this.dialog.open(AddnotesComponent, {
+      width: '35%',
+      data:{title: note.title, description: note.description}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      const currentNote: Note={
+      id: note.id,
+      title: result.value.title,
+      description: result.value.description  
+      }
+      this.api.editNote(currentNote).subscribe({
+        next: status=>{
+          console.log(JSON.stringify(status))
+        }
+      });
+      
+      const idx= this.noteList.indexOf(note)
+      this.noteList[idx]=currentNote;  
+    });
+}
+
+deleteNote(note: Note): void{
+    this.api.deleteNote(note.id).subscribe({
+      next: status=>{
+        console.log(JSON.stringify(status))
+      }
+    });
+    
+    const idx= this.noteList.indexOf(note)
+    this.noteList.splice(idx,1)
   }
 
   openDialogBox()  
   {
     const dialogRef = this.dialog.open(AddnotesComponent, {
-      width: '35%',
-      data: {title: this.title, description: this.description},
+      width: '35%'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       const currentNote={
+      id: '',
       title: result.value.title,
       description: result.value.description  
       }
       this.noteList.push(currentNote);  
     });
    }
+
 }
-
-
-
-
-// import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-// import { NgForm } from '@angular/forms';
-// import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-// import { AddnotesComponent } from '../addnotes/addnotes.component';
-// import { NotesService } from '../services/notes.service';
-
-// export interface DialogData {
-//     title: string;
-//     description: string;
-// }
-
-// @Component({
-//     selector: 'app-quicknotes',
-//     templateUrl: './quicknotes.component.html',
-//     styleUrls: ['./quicknotes.component.css']
-// })
-
-// export class QuicknotesComponent {
-
-//     // private notevar =;
-
-    
-//         //  console.log('notes',this.addnotes.AddnotesForm)
-    
-
-//     title: string;
-//     description: string;
-
-//     constructor(private dialog: MatDialog, private notesService: NotesService) {
-//         this.title = '';
-//         this.description = '';
-//     }
-//     // openDialogBox() {
-//     //     const dialogRef = this.dialog.open(AddnotesComponent, {
-//     //         width: '35%',
-//     //         data: { title: this.title, description: this.description },
-//     //     });
-//     //     dialogRef.afterClosed().subscribe(data => {
-//     //         console.log("result",data);
-//     //         console.log('The dialog was closed');
-//     //         this.title = data.title;
-//     //         this.description = data.description;
-//     //     });
-//     // }
-//     openDialogBox() {
-//         const dialogRef = this.dialog.open(AddnotesComponent, {
-//             width: '35%',
-//             data: { title: this.title, description: this.description },
-//         });
-//     }

@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import { ApiService } from '../api.service';
 
 export interface DialogData {
   title: string;
@@ -13,17 +14,22 @@ export interface DialogData {
   styleUrls: ['./groups.component.css']
 })
 
-
 export class GroupsComponent {
   addGroupForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder, private dialogRef:MatDialogRef<GroupsComponent>,
-    )  
+  display= true;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {title: string, description: string}, private formBuilder: FormBuilder,
+  private api: ApiService, private dialogRef:MatDialogRef<GroupsComponent>)  
   {
-    this.addGroupForm=this.formBuilder.group({
-      title: new FormControl( '', Validators.required),
-      description: new FormControl('', Validators.required)
+        this.addGroupForm = this.formBuilder.group({
+        title: new FormControl('', Validators.required),
+        description: new FormControl('')
           })
+  }
+
+
+  addGrp(): void
+  {
+    this.api.postdata(this.addGroupForm.value).subscribe();
   }
 
   onNoClick(): void {
