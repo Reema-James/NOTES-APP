@@ -1,0 +1,21 @@
+<small *ngIf= "AddnotesForm.controls['title'].invalid && AddnotesForm.controls['title'].touched"
+style ="color: red;"> Title is required</small>
+
+<div mat-dialog-content>
+  <form [formGroup]="AddnotesForm" >
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput placeholder="Title">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" matInput placeholder="Description">
+    </mat-form-field>
+    <div mat-dialog-actions>
+  
+      <button color="primary" mat-raised-button (click)="onNoClick()" >Close</button>
+      <button  color="primary" mat-raised-button [mat-dialog-close]="AddnotesForm" cdkFocusInitial 
+      type="submit" [disabled]="!AddnotesForm.valid">Add Note</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,82 @@
+
+
+  <!-- <p *ngFor="let i of quicknotes"> -->
+ 
+ <div class="fav">   <mat-toolbar color="primary">
+   <span><h1 >Favourites</h1></span>
+   <button color="white" mat-button (click)="onNoClick()">Close</button>
+  </mat-toolbar></div>
+
+<cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+
+   <mat-card class="example-card">
+
+     <mat-card-title>Note 1</mat-card-title>
+     <mat-card-content>This is a note about Space and Technology </mat-card-content>
+     <mat-divider inset></mat-divider>
+     <mat-card-actions>
+     <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+       <mat-icon>favorite</mat-icon>
+     </button>
+       <button mat-button>Edit</button>
+       <button mat-button>Delete</button>
+     </mat-card-actions>
+     </mat-card>
+ 
+     <mat-card class="example-card">
+     <mat-card-title>Note 2</mat-card-title>
+     <mat-card-content>This is a note about emerging technologies</mat-card-content>
+     <mat-divider inset></mat-divider>
+     <mat-card-actions>
+     <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+       <mat-icon>favorite</mat-icon>
+     </button>
+       <button mat-button>Edit</button>
+       <button mat-button>Delete</button>
+     </mat-card-actions>
+   </mat-card>
+ 
+   <mat-card class="example-card">
+ <mat-card-title>Note 3</mat-card-title>
+     <mat-card-content>This is a note about Travel and Cuisines</mat-card-content>
+     <mat-divider inset></mat-divider>
+     <mat-card-actions>
+     <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+       <mat-icon>favorite</mat-icon>
+     </button>
+       <button mat-button>Edit</button>
+       <button mat-button>Delete</button>
+     </mat-card-actions>
+ </mat-card>
+ 
+ <mat-card class="example-card">
+ 
+     <mat-card-title>Note 4</mat-card-title>
+     <mat-card-content>This is a note about Sports and Art</mat-card-content>
+     <mat-divider inset></mat-divider>
+     <mat-card-actions>
+     <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+       <mat-icon>favorite</mat-icon>
+     </button>
+       <button mat-button>Edit</button>
+       <button mat-button>Delete</button>
+     </mat-card-actions>
+     </mat-card>
+
+     <mat-card class="example-card">
+     <mat-card-title>Note 5</mat-card-title>
+     <mat-card-content>This is a note about Wonders of the World</mat-card-content>
+     <mat-divider inset></mat-divider>
+     <mat-card-actions>
+     <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+       <mat-icon>favorite</mat-icon>
+     </button>
+       <button mat-button>Edit</button>
+       <button mat-button>Delete</button>
+     </mat-card-actions>
+   </mat-card>
+
+ 
+
+ </cdk-virtual-scroll-viewport>
+ 

@@ -1,0 +1,31 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* 
+.favcard{
+   
+   height: 150px;
+
+} */
+/* .favcard1{
+  
+  height: 500px;
+
+} */
+
+.fav-card {
+  max-width: 300px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.groups{
+  max-width: 400px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+
+
+/* body{
+   background-image: url('https://cdn.wallpapersafari.com/38/4/ejFIbV.jpg');
+ }  */
