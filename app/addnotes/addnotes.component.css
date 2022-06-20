@@ -1,0 +1,25 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.example-card {
+  max-width: 300px;
+}
+.save-button{
+  background-color: #673ab7;
+  color: white;
+  margin-left: 20px;
+  width: 70px;
+  height: 25px;
+  margin-top: 10px;
+
+}
+.cancel-button{
+  background-color: #673ab7;
+  color: white;
+  width: 70px;
+  height: 25px;
+}
+
+.label{
+  width: 100px;
+}
+

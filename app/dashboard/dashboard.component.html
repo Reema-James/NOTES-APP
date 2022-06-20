@@ -1,0 +1,19 @@
+<!-- favourites-Display -->
+<div class="favs">
+<mat-card class="card">
+    <p>
+        <mat-toolbar>
+          <span><b>Favourites</b></span>
+        </mat-toolbar>
+      </p>
+<button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+<mat-icon>favorite</mat-icon>
+</button><mat-card-actions>
+<button mat-raised-button color="primary" (click)="openDialog()">View all</button>
+</mat-card-actions>
+
+</mat-card>
+</div>
+
+<app-groups-list></app-groups-list>
+

@@ -1,0 +1,17 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.example-card {
+    max-width: 300px;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
+
+ .fav{
+  text-align: center;
+}
+
+
+.example-viewport {
+  height: 450px;
+  width: 500px;
+}

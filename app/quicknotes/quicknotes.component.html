@@ -1,0 +1,30 @@
+<div>
+  <mat-card >
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)='openDialogBox()'>Create Note</button>
+      <a mat-raised-button color="primary" routerLink=''>Back</a>
+    </mat-card-actions>
+    
+      <p *ngFor="let note of noteList">
+        <mat-card class="card" *ngIf="noteList.length">
+          <mat-card-title>{{note.title}}</mat-card-title>
+          <mat-card-content>{{note.description}}</mat-card-content>
+          <mat-card-actions>
+            
+            <!-- <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button> -->
+<!-- {{note.favourite}} -->
+
+            <button *ngIf="note.favourite"><i class="fa-solid fa-heart"></i></button>
+            <button *ngIf="!note.favourite" (click)='addToFavourite(note)'><i class="fa-regular fa-heart"></i></button>
+            
+              <button mat-raised-button color="primary" (click)='editNote(note)'>Edit</button>
+              <button mat-raised-button color="primary" (click)='dltMethod(note)'>Delete</button>
+              <!-- <button mat-raised-button color="primary" (click)='deleteNote(note)' >Delete</button> -->
+            </mat-card-actions>
+
+        </mat-card>
+      </p>
+    </mat-card>
+  </div>
