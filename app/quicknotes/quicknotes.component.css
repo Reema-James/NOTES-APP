@@ -1,12 +1,26 @@
+.example-card {
+    max-width: 300px;
+}
+
 .card{
-    max-width: 25%;
-    border: 1px solid #dadada;
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    float: left;
-    margin-top: 33px;
-    margin-left:10px;
-  }
+  max-width: 260px;
+  border: 1px solid #dadada;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin-top: 33px;
+  margin-left: 10px
+}
+
+.delete-button{
+  margin-left: 20px;
+}
+
+.create-note{
+  margin-left: 100px;
+  padding-bottom: 15px;
+  margin-top: -36px
+}

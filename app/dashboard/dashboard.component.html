@@ -3,17 +3,19 @@
 <mat-card class="card">
     <p>
         <mat-toolbar>
-          <span><b>Favourites</b></span>
+          <span><b>FAVOURITES</b>
+            <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+            </button></span>
         </mat-toolbar>
-      </p>
-<button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
-<mat-icon>favorite</mat-icon>
-</button><mat-card-actions>
+    </p>
+<div class="viewbutton">
+<mat-card-actions>
 <button mat-raised-button color="primary" (click)="openDialog()">View all</button>
 </mat-card-actions>
+</div>
 
 </mat-card>
 </div>
 
 <app-groups-list></app-groups-list>
-

@@ -23,3 +23,6 @@
   width: 100px;
 }
 
+.noteform{
+  overflow-y: hidden !important;
+}

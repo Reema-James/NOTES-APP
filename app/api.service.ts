@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Group } from './groups-list/group';
+import { GroupDTO } from './groups-list/groupDTO';
 import { Note } from './quicknotes/notes';
 
 
@@ -28,8 +29,8 @@ export class ApiService {
     return this.http.delete("http://localhost:3000/groups:"+id);
   }
 
-  editGroup(group: Group){
-    return this.http.put("http://localhost:3000/groups:"+group.id, group);
+  editGroup(group: any){
+    return this.http.put<Group[]>("http://localhost:3000/groups:"+group.id, group);
   }
 
   postNote(data:any, id: String){
@@ -41,7 +42,10 @@ export class ApiService {
     return this.http.delete("http://localhost:3000/notes:"+note.id+"/group:"+note.groupId);
   }
 
-
+  getGroupName(id: String){
+    return this.http.get("http://localhost:3000/group:"+id);
+  }
+  
   editNote(note: Note){
     return this.http.put("http://localhost:3000/groups:"+note.id, note);
   }

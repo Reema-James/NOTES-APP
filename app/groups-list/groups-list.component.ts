@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { ApiService } from '../api.service';
 import { GroupsComponent } from '../groups/groups.component';
 import { Group } from './group';
+import { GroupDTO } from './groupDTO';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { Group } from './group';
 export class GroupsListComponent implements OnInit, OnDestroy {
 
   sub!: Subscription;
-  groupList: any[] = [];
+  groupList: Group[] = [];
   countSub!: Subscription;
   count!: Number;
 
@@ -39,26 +40,21 @@ editGrp(group: Group): void{
   
     const dialogRef = this.dialog.open(GroupsComponent, {
       width: '35%',
-      data:{title: group.title, description: group.description}
-    });
-
+      height: '40%',
+      data: {title: group.title, description: group.description}
+     });
     dialogRef.afterClosed().subscribe(result => {
-      const currentGroup: Group={
-      id: group.id,
-      count: 0,
+      const currentGroup: GroupDTO={
+        id: group.id,
       title: result.value.title,
       description: result.value.description  
       }
       this.api.editGroup(currentGroup).subscribe({
-        next: status=>{
-          console.log(JSON.stringify(status))
+        next: groupList => {
+         this.groupList= groupList;
         }
       });
-      
-      const idx= this.groupList.indexOf(group)
-      this.groupList[idx]=currentGroup;  
     });
-
 }
 
 dltMethod(group: Group) {
@@ -80,30 +76,23 @@ dltMethod(group: Group) {
 }
 
 
-// deleteGrp(group: Group): void{
-//   this.api.deleteGroup(group.id).subscribe({
-//     next: status=>{
-//       console.log(JSON.stringify(status))
-//     }
-//   });
-  
-//   const idx= this.groupList.indexOf(group)
-//   this.groupList.splice(idx,1)
-// }
-
   openDialogBox()  
   {
     const dialogRef = this.dialog.open(GroupsComponent, {
-      width: '35%'
+      width: '35%',
+      height: '40%'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       const currentGroup={
-      id: '',
       title: result.value.title,
       description: result.value.description  
       }
-      this.groupList.push(currentGroup);  
+      this.api.postdata(currentGroup).subscribe({
+        next: groupList => {
+          this.groupList= groupList
+        }
+      });
     });
    }
 

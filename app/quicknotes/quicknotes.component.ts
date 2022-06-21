@@ -18,7 +18,7 @@ export class QuicknotesComponent implements OnInit, OnDestroy {
     sub!: Subscription;
     noteList: Note[] = [];
     favouriteList: Note[]= [];
-
+    data: any;
 
   constructor(public dialog : MatDialog, private api: ApiService, private route: ActivatedRoute) { 
   }
@@ -30,6 +30,12 @@ export class QuicknotesComponent implements OnInit, OnDestroy {
         this.noteList= notes;
       }
     });
+    this.api.getGroupName(id).subscribe({
+      next: data => {
+        console.log(JSON.stringify(data))
+        this.data= data;
+      }
+    })
   }
 
   ngOnDestroy(): void {
@@ -40,6 +46,7 @@ editNote(note: Note): void{
   
     const dialogRef = this.dialog.open(AddnotesComponent, {
       width: '35%',
+      height: '40%'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -72,10 +79,10 @@ editNote(note: Note): void{
 //     this.noteList.splice(idx,1)
 //   }
 
-  addToFavourite(note: Note) :void {
-    const currentFav={...note, favourite: true}
-    this.favouriteList.push(currentFav)
-  }
+  // addToFavourite(note: Note) :void {
+  //   const currentFav={...note, favourite: true}
+  //   this.favouriteList.push(currentFav)
+  // }
 
   dltMethod(note: Note) {
 
@@ -99,7 +106,8 @@ editNote(note: Note): void{
   {
     const id = this.route.snapshot.paramMap.get('id') || '';
     const dialogRef = this.dialog.open(AddnotesComponent, {
-      width: '35%'
+      width: '35%',
+      height: '40%'
     });
 
     dialogRef.afterClosed().subscribe(result => {

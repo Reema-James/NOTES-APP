@@ -1,25 +1,24 @@
-<div mat-dialog-content>
-<h2>Add Group</h2>
-  <small *ngIf= "addGroupForm.controls['title'].invalid && addGroupForm.controls['title'].touched"
-  style ="color: red;"> Title is required</small>
+<h2 mat-dialog-title>{{data ? 'Edit' : 'Add'}} Group</h2>
+
+<div  class="groupformclass" mat-dialog-content >
   <form [formGroup]="addGroupForm">
         <mat-form-field appearance="outline">
           <mat-label>Title</mat-label>
           <input formControlName="title" matInput placeholder="Group title" required>
-        </mat-form-field> &nbsp;
-
+          <mat-error *ngIf= "addGroupForm.controls['title'].invalid && addGroupForm.controls['title'].touched">Title is required</mat-error>
+        </mat-form-field>&nbsp;
         <mat-form-field appearance="outline">
           <mat-label>Description</mat-label>
           <input formControlName="description" matInput placeholder="Description">
         </mat-form-field>
 
         <div mat-dialog-actions>
-          <button color="primary" mat-raised-button (click)="onNoClick()">Close</button>
-          <button color="primary" mat-button [mat-dialog-close]="addGroupForm" cdkFocusInitial 
-          type="submit" [disabled]="!addGroupForm.valid" (click)="addGrp()">Add Group</button>
+          <footer>
+        <button color="primary" mat-raised-button (click)="onNoClick()">Close</button>
+         <button color="primary" mat-button [mat-dialog-close]="addGroupForm" cdkFocusInitial 
+           type="submit" [disabled]="!addGroupForm.valid" >{{data ? 'Edit' : 'Add'}} Group</button>
+
+        </footer>
         </div>
 </form> 
 </div>
-
-   
-   <!--(click)="addGroup()"  -->
