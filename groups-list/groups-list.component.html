@@ -1,0 +1,25 @@
+<div class="grps">
+    <mat-card class="fullcard">
+        <p>
+            <mat-toolbar>
+              <span><b>GROUPS</b></span>
+            </mat-toolbar>
+          </p>
+   <div class="addgroup"><button mat-raised-button color="primary" (click)="openDialogBox()">Add Group</button></div>  
+     <!-- <br> -->
+    <div *ngFor="let group of groupList">
+        <mat-card class="card" *ngIf="groupList.length">
+            <mat-toolbar><h2><b>{{group.title}}</b></h2></mat-toolbar>
+            <mat-card-content><h3>{{group.description}}</h3></mat-card-content>
+           <mat-card-content>Notes: {{group.count}}</mat-card-content>
+            
+           <mat-card-actions>
+              <a mat-raised-button color="primary" [routerLink]="['/quicknotes', group.id]">View</a>
+              <button mat-raised-button color="primary" (click)='editGrp(group)'>Edit</button>
+              <button mat-raised-button color="primary"(click)='dltMethod(group)'>Delete</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    </mat-card>
+    </div>
+

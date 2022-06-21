@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Add Group</h2>
+
+<div  class="groupformclass" mat-dialog-content >
+  <form [formGroup]="addGroupForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input formControlName="title" matInput placeholder="Group title" required>
+          <mat-error *ngIf= "addGroupForm.controls['title'].invalid && addGroupForm.controls['title'].touched">Title is required</mat-error>
+        </mat-form-field>&nbsp;
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input formControlName="description" matInput placeholder="Description">
+        </mat-form-field>
+
+        <div mat-dialog-actions>
+          <footer>
+        <button color="primary" mat-raised-button (click)="onNoClick()">Close</button>
+         <button color="primary" mat-button [mat-dialog-close]="addGroupForm" cdkFocusInitial 
+           type="submit" [disabled]="!addGroupForm.valid" (click)="addGrp()">Add Group</button>
+        </footer>
+        </div>
+</form> 
+</div>
+
+   
+   <!--(click)="addGroup()"  -->
